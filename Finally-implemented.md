@@ -12,7 +12,7 @@ eksctl create fargateprofile \
   --region us-east-1 \
   --name alb-sample-app \
   --namespace game-2048
-
+```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.5.4/docs/examples/2048/2048_full.yaml
 ```
 ```
@@ -27,11 +27,11 @@ kubectl get svc -n game-2048 -w
 kubectl get ingress -n game-2048
 
 ```
-# The service-2048 is of type NodePort, so no external access yet.
+ The service-2048 is of type NodePort, so no external access yet.
 
-# Ingress will expose the app once the ALB controller is configured.
+ Ingress will expose the app once the ALB controller is configured.
 
-# Once successful, kubectl get ingress will show an ADDRESS (DNS name of ALB).
+ Once successful, kubectl get ingress will show an ADDRESS (DNS name of ALB).
 
 # Step 4: Associate IAM OIDC Provider
 ```
